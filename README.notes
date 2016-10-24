@@ -1,0 +1,9 @@
+Dancer as a web app.
+KiokuDB for basic model.
+Upload page.
+Search page.
+Results page.
+Session plugin linked to DB to maintain outfits.
+Basic unit testing over the model.
+Manual test script for the site.
+
