@@ -24,6 +24,8 @@ WriteMakefile(
         'Moose'                 => 0,
         'KiokuX::Model'         => 0,
         'KiokuDB::Backend::DBI' => 0,
+        # 'Module::Refresh'       => 0,
+        'Text::Trim'            => 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Wardrobe-*' },

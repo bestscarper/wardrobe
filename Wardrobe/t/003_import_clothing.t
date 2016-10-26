@@ -1,4 +1,4 @@
-use Test::More tests => 2;
+use Test::More tests => 1;
 use strict;
 use warnings;
 use DBD::SQLite;
@@ -14,7 +14,7 @@ open( my $fh, "<", __DIR__ . "/clothing.csv" )
 
 # for behavioural TDD better to mock 'Wardrobe::Data::Line::new' etc
 # and verify that this is called with suitable params
-Wardrobe::Model->import_cat( $db, $fh );
+$db->import_cat( $fh );
 
 close($fh);
 

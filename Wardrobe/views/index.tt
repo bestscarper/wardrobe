@@ -1,30 +1,26 @@
 <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Sidebar 1</h3>
-            <ul class="links">
-              <li><a href="http://twitter.com/PerlDancer/">Official Twitter</a></li>
-            </ul>
-          </li>
-          
-          <li>
-            <h3>Your application's environment</h3>
-
-            <ul>
-                <li>Location: <code><% settings.appdir %></code></li>
-                <li>Template engine: <code><% settings.template %></code></li>
-                <li>Logger: <code><% settings.logger %></code></li>
-                <li>Environment: <code><% settings.environment %></code></li>
-            </ul>
-          </li>
-        </ul>
-
-      </div>
-
       <div id="content">
         <div id="header">
           <h1>Wardrobe</h1>
         </div>
       </div>
-    </div>
+
+      <div id="search">
+        <form action="/results" name="search">
+            <p>Search by name:
+            <input name="q" />
+            <input type="Submit" />
+            </p>
+        </form>
+      </div>
+
+      <div id="upload">
+        <form action="/upload" name="upload_form" method="POST" enctype="multipart/form-data">
+            <p>Upload catalogue
+            <input type="file" name="catalogue"/>
+            <input type="Submit" />
+            </p>
+        </form>
+      </div>
+
+</div>
