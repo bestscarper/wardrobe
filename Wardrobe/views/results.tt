@@ -27,9 +27,37 @@
           <h1>Results</h1>
     <ol>
   [% FOREACH i IN results %]
-        <li>[% i.name %] in ([% i.category %])</li>
+        <li>
+            <span>[% i.name %]</span>
+            in
+            (<span>[% i.category %]</span>)
+            <a href="#" id="add-line-to-order" data-name="[% i.name %]">
+            Add to Order
+            </a>
+        </li>
   [% END %]
     </ol>
         </div>
       </div>
     </div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#add-line-to-order").click(function(){
+        var line_name = $(this).data('name');
+        console.log( "clicked add-line" + line_name )
+        $.post("/ajax/add-line-to-order",
+            {
+                name: line_name,
+            },
+            function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+            }
+            );
+    });
+    console.log( "onclick registered" )
+});
+</script>
+<noscript>
+Without Javascript enabled, you can look but not buy.
+</noscript>
+

@@ -25,7 +25,7 @@ sub BUILDARGS {
 sub import_cat {
     my $self = shift;
     my $fh = shift;
-    # TODO: => Uploader class
+
     my $c = Text::CSV->new( { binary => 1 } )
         or die "Text::CSV failed: ".Text::CSV->error_diag;
     $c->getline($fh);
@@ -43,6 +43,21 @@ sub search_query {
     my @results = $self->search( { name => $params{q} } )->all;
 
     return @results;
+}
+
+sub get_all {
+    my $self = shift;
+
+    my @results = $self->root_set( { } )->all;
+
+    return @results;
+}
+
+sub add_line_to_order {
+    my $self = shift;
+    my $line_name = shift;
+
+    debug("add line: $line_name");
 }
 
 1;
